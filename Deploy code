@@ -1,0 +1,6 @@
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const data = e.parameter;
+  sheet.appendRow([data.name, data.phone, data.email, data.college, new Date()]);
+  return ContentService.createTextOutput("Success");
+}
